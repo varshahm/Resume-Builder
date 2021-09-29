@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatibe" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+            <link rel="stylesheet" href="style.css" />
+
+            <title>Resume Builder</title>
+        </head>
+        <body>
+
+
+            <div class="container" id="resume-form">
+                <h1 class="text-center my-2">Resume Builder</h1>
+
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+
+                        <h3>Personal Information</h3>
+                        <div class="form-group">
+                            <label for="nameField">Your Name</label>
+                            <input type="text" id="nameField" placeholder="Enter here" class="form-control">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="emailField">Your E-mail Address</label>
+                            <input type="text" id="emailField" placeholder="Enter here" class="form-control">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="phoneField">Your Phone No.</label>
+                            <input type="text" id="phoneField" placeholder="Enter here" class="form-control">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="addressField">Your Address</label>
+                            <textarea  id="addressField" placeholder="Enter here" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group my-3">
+                            <label for="">Select your photo</label>
+                            <input id="imgField" type="file" class="form-control">
+                        </div>
+
+
+                        <!-----<p class="form-group mt-2">Important Links</p>---->
+                        <div class="form-group my-3">
+                            <label for="linkField">LinkedIn Link</label>
+                            <input type="text" id="linkField" placeholder="Enter here" class="form-control">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="hobbyField">Hobbies/Interest</label>
+                            <input type="text" id="hobbyField" placeholder="Enter here" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 mt-3">
+                        <h3>Professional Information</h3>
+                        <div class="form-group">
+                            <label for="objectiveField">Objective</label>
+                            <textarea  id="objectiveField" placeholder="Enter here" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group my-2" id="Edu">
+                            <label for="">Education Details</label>
+                            <textarea   placeholder="Enter here" class="form-control EdField"></textarea>
+
+                            <div class="container text-center mt-2 " id="EdAddButton">
+                                <button onclick="addNewEdField()" class="btn btn-dark btn-sm">Add</button>
+                            </div>
+                        </div>
+                        <div class="form-group " id="Ts">
+                            <label for="">Technical skills</label>
+                            <textarea   placeholder="Enter here" class="form-control TsField"></textarea>
+
+                            <div class="container text-center mt-2 " id="TsAddButton">
+                                <button onclick="addNewTsField()" class="btn btn-dark btn-sm">Add</button>
+                            </div>
+                        </div>
+                        <div class="form-group " id="Pro">
+                            <label for="">Project</label>
+                            <textarea   placeholder="Enter here" class="form-control ProField"></textarea>
+
+                            <div class="container text-center mt-2 " id="ProAddButton">
+                                <button onclick="addNewProField()" class="btn btn-dark btn-sm">Add</button>
+                            </div>
+                        </div>
+                        <div class="form-group " id="Int">
+                            <label for="">Internship</label>
+                            <textarea   placeholder="Enter here" class="form-control InternField"></textarea>
+
+                            <div class="container text-center mt-2 " id="InternAddButton">
+                                <button onclick="addNewIntField()" class="btn btn-dark btn-sm">Add</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container text-center mt-2">
+                   <button onclick="generateResume()" class="btn btn-dark btn-lg">Generate Resume</button>
+                </div>
+            </div>
+
+            
+            <div class="container" id="resume-template">
+
+                <div class="row">
+                    <div class="col-md-4 text-center py-5 background">
+
+                        <img src="profile.png" alt="" id="imgT" class="img-fluid myimg" /> 
+
+                        <div class="container ">
+                            <p id="nameT1">Varsha H M</p>
+                            <p id="mailT">varshahm12@gmail.com</p>
+                            <p id="phT">+91698989997</p>
+                            <p id="addressT">#979 fjyjykv,gugio</p>
+                           
+                            <p><a id="linkT" href="#1">https://www.linkedIn.com</a></p>
+                            <hr/>
+
+                                
+                                    <h3>Hobbies/Interest</h3>
+                                    <ul id="hobT">
+                                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                    </ul>
+                                
+                           
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="col-md-8 py-5">
+                        <h1 id="nameT2" class="text-center" style="font-weight: 980;">Varsha H M</h1>
+
+                        <div class="card mt-4">
+                            <div class="card-header background">
+                                <h3>Objective</h3>
+                            </div>
+                            <dev class="card-body">
+                                <p id="objectiveT">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo illo quas error deleniti obcaecati eaque repellendus nemo velit vel ex corrupti eius quasi ducimus perferendis reiciendis, atque iure voluptate odio.</p>
+                            </dev>
+                        </div>
+
+                        <div class="card mt-4">
+                            <div class="card-header background">
+                                <h3>Education Details</h3>
+                            </div>
+                            <dev class="card-body">
+                                <ul id="EduT">
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                </ul>
+                            </dev>
+                        </div>
+
+                        <div class="card mt-4">
+                            <div class="card-header background">
+                                <h3>Technical skills</h3>
+                            </div>
+                            <dev class="card-body">
+                                <ul id="TechT">
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                </ul>
+                            </dev>
+                        </div>
+
+                        <div class="card mt-4">
+                            <div class="card-header background">
+                                <h3>Project</h3>
+                            </div>
+                            <dev class="card-body">
+                                <ul id="ProT">
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                </ul>
+                            </dev>
+                        </div>
+
+                        <div class="card mt-4">
+                            <div class="card-header background">
+                                <h3>Internship</h3>
+                            </div>
+                            <dev class="card-body">
+                                <ul id="IntT">
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, iusto.</li>
+                                </ul>
+                            </dev>
+                        </div>
+
+                        <div class="container mt-3 text-center">
+                            <button onclick="printResume()"  class="btn background">Print Resume</button>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+
+            
+                
+            </div>
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+            <script src="style.js"></script> 
+            <script src="html2pdf.bundle.min.js"></script>
+        </body>
+    </html>

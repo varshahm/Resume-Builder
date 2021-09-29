@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+    </head>
+    <body>
+	<style>
+body {
+  background-image: url('login.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+        <form action="validation.php" method="POST">
+        <center><h1>Resume Builder</h1>
+        <h3>Login Here</h3>
+        <table>
+            <tr>
+                <td>E-mail</td><td><input type="text" name="email" required/></td>
+            </tr>
+            <tr>
+                <td>Password</td><td><input type="password" name="password" required/></td>
+            </tr>
+           
+        </table>
+        <br />
+        <input type="submit" name="login" value="Login"/>
+        <br>
+		<tr>
+		  To register<a href="insert.html">
+		  Register</a>
+		 </tr>
+		 
+	
+    </body>
+</html>
